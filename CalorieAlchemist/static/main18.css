@@ -7,19 +7,22 @@ div#main{
 }
 
 body {
-    background: #f5d9d5;
-    color: #333333;
-    margin-top: 5rem;
-  }
+  background-image: url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1531&q=80");
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  color: #333333;
+  margin-top: 5rem;
+}
   
  .container .navbar-brand{
   font-size: 25px;
-  color:red;
+  color:#f75a69;
 }
 
 .site-header .navbar-nav .nav-link{
   font-size: 20px;
-  color:red;
+  color:#f75a69;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,4 +95,16 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+.bg-dark {
+  background-color: #ffdfe2!important;
+}
+
+.content-section {
+  background: #fff3f5;
+}
+
+div.jumbotron{
+  background: #fff3f5;
 }

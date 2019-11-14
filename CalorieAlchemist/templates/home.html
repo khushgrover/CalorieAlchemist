@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
     {% for post in posts.items %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
@@ -8,15 +11,13 @@
               <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
               <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
             </div>
-            <h2 class="article-title">{{ post.title }}</h2>
-            <!-- {{ post.image_file }} -->
-            <img class="account-img" src="{{ url_for('static', filename='images/' + post.image_file) }}">
-            <p>Predicted Class:{{ post.label }}</p>
-           <p>Predicted Calories:{{ post.calories }}</p>
+                  <h2 class="article-title">{{ post.title }}</h2>
+                  <img class="account-img" src="{{ url_for('static', filename='images/' + post.image_file) }}">
+                  <p><strong>Predicted Class: </strong>{{ post.label }}</p>
+                  <p><strong>Predicted Calories: </strong>{{ post.calories }}</p>
           </div>
         </article>
     {% endfor %}
-
     {% for page_num in posts.iter_pages(left_edge=1, right_edge=1,left_current=1, right_current=2) %}
         {% if page_num %}
           {% if posts.page == page_num %}
@@ -28,4 +29,7 @@
           ...
         {% endif %}
     {% endfor %}
+  </div>
+  <div class="col-lg-2"></div>
+</div>
 {% endblock content %}

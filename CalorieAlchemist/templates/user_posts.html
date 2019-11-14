@@ -1,19 +1,20 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
     <h1 class="mb-3">Posts by {{ user.username }} ({{ posts.total }})</h1>
     {% for post in posts.items %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}</a>
               <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
             </div>
             <h2 class="article-title">{{ post.title }}</h2>
-            <!-- {{ post.image_file }} -->
             <img class="account-img" src="{{ url_for('static', filename='images/' + post.image_file) }}">
-            <p>Predicted Class:</p>
-            <p>Predicted Calories:</p>
+            <p><strong>Predicted Class: </strong>{{ post.label }}</p>
+            <p><strong>Predicted Calories: </strong>{{ post.calories }}</p>
           </div>
         </article>
     {% endfor %}
@@ -29,4 +30,7 @@
           ...
         {% endif %}
     {% endfor %}
+  </div>
+  <div class="col-lg-2"></div>
+</div>
 {% endblock content %}
