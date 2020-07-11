@@ -23,7 +23,8 @@ def send_reset_email(user):
     msg = Message('Password Reset Request',
                    sender='khushnumagrover@gmail.com',
                    recipients=[user.email])
-    msg.body = f'''To reset you password, visit the following link:
+    msg.body = f'''Hello from Calorie Alchemist ! 
+To reset you password, visit the following link:
 {url_for('users.reset_token', token=token, _external=True)}
 
 If you did not make this request then simply ignore this email and no changes will be made.
