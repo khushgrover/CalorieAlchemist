@@ -22,7 +22,7 @@ posts = Blueprint('posts', __name__)
 
 def get_model():
     global model
-    model = load_model('C:/Users/Rajesh Sharma/Desktop/CalorieAlchemist/CalorieAlchemist/models/model_keras.h5')
+    model = load_model('/home/khushnuma/Projects/CalorieAlchemist/CalorieAlchemist/models/model_keras.h5')
 
 get_model()
 

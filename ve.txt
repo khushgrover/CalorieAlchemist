@@ -1,6 +1,5 @@
-cd "..\..\ProgramData\Anaconda3\virtual envs\My Virtual Env\Scripts"
-
-cd "..\..\..\..\..\Users\Rajesh Sharma\Desktop\CalorieAlchemist"
+mkvirtualenv name
+workon name
 
 from CalorieAlchemist import db, create_app
 db.drop_all(app=create_app())
